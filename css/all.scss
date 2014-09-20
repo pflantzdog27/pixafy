@@ -1,0 +1,181 @@
+@import 'normalize';
+@import 'global-variables';
+@import 'mixins';
+@import 'primary-navigation';
+@import 'structural';
+@import 'footer';
+
+#header {
+  margin-top: 35px;
+  #logo {
+    @include transition(0);
+    width: 114px;
+    height: 63px;
+    display: block;
+    background: url(../images/logo-sprite-animation.png) no-repeat  0 0;
+      @include tablets {
+        margin-left: 20px;
+      }
+  }
+}
+
+#banner {
+  width: 80%;
+  height: 111px;
+  margin: 0 auto;
+  margin-top: 115px;
+    @include phones {
+      margin-top: 50px;
+    }
+    img {
+      @extend %responsiveImage;
+    }
+}
+
+#company-intro {
+  background: $pixafyLightGray;
+  margin-top: 135px;
+  padding: $boxWrapperPadding;
+    @include phones {
+      margin-top: 20px;
+    }
+    article {
+      width: 70%;
+      float: left;
+        @include phones {
+          width: 100%;
+          float: none;
+        }
+        p {
+          width: 85%;
+          @include font-size(12px);
+          line-height: 1.5;
+        }
+
+    }
+    aside {
+      width: 30%;
+      min-height: 110px;
+      float: left;
+      @include flexbox;
+      @include flexDirection(row);
+      @include flexAlignItems(flex-end);
+        @include phones {
+          width: 100%;
+          float: none;
+        }
+        a {
+          width: 60%;
+          @extend %pixafyButton;
+          display: block;
+          margin-left: 20px;
+            @include phones {
+              width: 100%;
+              margin: 0 auto;
+            }
+            &:hover {
+              background: $pixafyLightGray;
+            }
+        }
+    }
+}
+
+#services {
+  padding: $boxWrapperPadding;
+  background: $pixafyBlack;
+    .bucket {
+      float: left;
+      width: 29%;
+      margin-right: 4%;
+      color: #fff;
+        @include phones {
+          width: 100%;
+          margin: 10px 0;
+        }
+        article {
+          padding-left: 68px;
+          min-height: 85px;
+          @include font-size(12px);
+          margin-top: 20px;
+        }
+        // each buckets' icon
+        &:nth-child(1) > article {
+          background: url(../images/web-dev-icon.png)no-repeat 0 0;
+        }
+        &:nth-child(2) > article {
+          background: url(../images/eCommerce-icon.png)no-repeat 0 0;
+        }
+        &:nth-child(3) > article {
+          background: url(../images/mobile-icon.png)no-repeat 0 0;
+        }
+        footer {
+          text-align: right;
+            a {
+              @include font-size(12px);
+              font-style: italic;
+              color: $pixafyOrange;
+              text-decoration: none;
+                &:hover {
+                  text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+#footer {
+  margin-top: 35px;
+  border-top: 1px solid $pixafyLightGray;
+  padding: 10px 0 35px;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      @include font-size(12px);
+        li {
+          display: inline-block;
+          margin-right: 50px;
+          color: $pixafyLightGray;
+          a {
+            color: $pixafyLightGray;
+            text-decoration: none;
+              &:hover {
+                color: $pixafyOrange;
+                text-decoration: underline;
+              }
+          }
+        }
+
+    }
+    .columns-list-wrap {
+      width: 65%;
+      margin-bottom: 20px;
+      -webkit-column-count:4;
+      -moz-column-count:4;
+      -ms-column-count:4;
+      -o-column-count:4;
+      -webkit-column-gap:7px;
+      -moz-column-gap:7px;
+      -ms-column-gap:7px;
+      -o-column-gap:7px;
+      column-count:4;
+      column-gap:7px;
+        @include phones {
+          width: 100%;
+        }
+        li {
+          width: 100%;
+          margin: 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,132 @@
+//***  REM for font sizes  ***/
+//***********************************************
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+//*** Clearfix  ***/
+//***********************************************
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+//***  Media Queries  ***/
+//***********************************************
+@mixin phones {
+  @media only screen and (max-width: 768px) { @content; }
+}
+@mixin tablets {
+  @media only screen and (max-width: 992px) { @content; }
+}
+@mixin desktops {
+  @media only screen and (max-width: 1200px) { @content; }
+}
+
+
+//***  Opacity (for IE < 8 compatibility)  ***/
+//***********************************************
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie);
+}
+//***  Box Shadows  ***/
+//***********************************************
+@mixin box-shadow($dimensions, $color) {
+  -webkit-box-shadow: $dimensions $color;
+  -moz-box-shadow:    $dimensions $color;
+  box-shadow:         $dimensions $color;
+}
+
+/***  Transitions  ***/
+//***********************************************
+@mixin transition($args) {
+  -o-transition: $args;
+  -ms-transition: $args;
+  -moz-transition: $args;
+  -webkit-transition: $args;
+  transition: $args;
+}
+/***  Radius  ***/
+//***********************************************
+@mixin border-radius($radius){
+  -webkit-border-radius:  $radius;
+  -moz-border-radius:  $radius;
+  border-radius:  $radius;
+}
+/***  Box Border  ***/
+//***********************************************
+
+@mixin border-box(){
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+}
+
+/***  Cover BG  ***/
+//***********************************************
+
+@mixin coverBG(){
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+/***  Flexbox  ***/
+//***********************************************
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flexAlignItems($values) {
+  -webkit-box-align-items: $values;
+  -moz-box-align-items:  $values;
+  -webkit-align-items:  $values;
+  -ms-align-items:  $values;
+  align-items:  $values;
+}
+
+@mixin flexDirection($val) {
+  -webkit-box-flex-direction: $val;
+  -moz-box-flex-direction: $val;
+  -ms-flex-flex-direction: $val;
+  -webkit-flex-direction: $val;
+  flex-direction: $val;
+}
+
+
+//*** EXTENDERS  ***/
+//***********************************************
+%responsiveImage {
+  max-width: 100%;
+  display: block;
+  width: 100%;
+}
+%pixafyButton {
+  width: 100%;
+  text-align: center;
+  background: $pixafyOrange;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+}
+
+

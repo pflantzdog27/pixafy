@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+    <title>Pixafy</title>
+    <!--<link rel="shortcut icon" href="images/favicon.ico">-->
+    <link rel="stylesheet" href="css/all.css">
+    <script src="js/modernizr-2.6.2.min.js"></script>
+</head>
+<body data-ng-app="pixafyApp">
+    <div class="container">
+        <header id="header" class="line">
+            <div id="menu-bar">
+                <h1 class="hidden-text"><a href="#" id="logo">Pixafy</a></h1>
+                <button id="hamburger" class="hide-on-desktop"></button>
+            </div>
+            <nav id="main-navigation">
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="banner">
+            <h2 class="hidden-text">You think it, we build it</h2>
+            <img class="responsive-image" src="images/banner.png" alt="You think it, we build it">
+        </section>
+        <section id="company-intro">
+            <div class="line">
+                <article>
+                    <h3>We are a company of expert developers based in New York City. Partner with us to achieve your business goals through technology.</h3>
+                    <p>Our talented and experienced team has over 10 years of experience developing world-class websites and applications, and we leverage the latest technologies, content management solutions, open source platforms, and web standards to solve any challenge.</p>
+                </article>
+                <aside>
+                    <a href="#">Learn More</a>
+                </aside>
+            </div>
+        </section>
+        <section id="services" data-ng-controller="bucketsController">
+            <div class="line">
+                <article class="bucket" data-ng-repeat="section in sections">
+                    <header>
+                        <h4>{{section.title}}</h4>
+                    </header>
+                    <article style="background-image:{{section.image}}">
+                        <p>{{section.teaser}}</p>
+                    </article>
+                    <footer>
+                        <a href="{{section.url}}">Learn More</a>
+                    </footer>
+                </article>
+            </div>
+        </section>
+
+        <footer id="footer">
+            <div class="columns-list-wrap">
+                <ul>
+                    <li><a href="#">About Pixafy</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">443 Park Ave. South, Suite 601</a></li>
+                    <li>New York, NY 10016</li>
+                    <li><a href="tel:16313510521">631-351-0521</a></li>
+                    <li><a href="mailto:info@pixafy.com">info@pixafy.com</a></li>
+                </ul>
+            </div>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li>&copy;2011</li>
+            </ul>
+        </footer>
+    </div>
+
+
+
+<!-- external scripts -->
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>
